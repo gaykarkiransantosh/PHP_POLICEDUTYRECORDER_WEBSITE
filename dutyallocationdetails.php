@@ -19,8 +19,8 @@ body {
 background-image:linear-gradient(to right,#ff6600,white,green);
 
   border:2px  solid tomato;
-  margin-left:25%;
- 
+  margin-left:28%;
+  margin-top:5%;
 
 }
 
@@ -169,7 +169,7 @@ border-radius:13px;
   width:80%;
   height:40%;
   background-color:gray;
-   /* background-image: url('https://st1.latestly.com/wp-content/uploads/2019/01/Republic-Day-2019-Image-380x214.jpg'); */
+  background-image: url('https://st1.latestly.com/wp-content/uploads/2019/01/Republic-Day-2019-Image-380x214.jpg');
   background-repeat: no-repeat;
   /* background-attachment: fixed; */
   background-size: cover;
@@ -208,9 +208,8 @@ border-radius:13px;
 <table class="table">
 
 <tr>
-
-<td class="h">Home</td>
-<td class="h">About Us</td>
+<td class="h"> <a href="">Home</a></td>
+<td class="h"> <a href="about.php">About Us</a></td>
 <td><input type="search" placeholder="search here"></td>
 <td><img src="https://cdn5.vectorstock.com/i/1000x1000/30/49/search-icon-seo-big-data-symbol-web-vector-27813049.jpg" width="50" height="30"></td>
 </tr>
@@ -256,7 +255,7 @@ $db1="phpdatabase";
 //$db = mysqli_connect("localhost","root","","phpdatabase");
 $db=new mysqli("localhost",$user,$pass,$db1) or die("not conncetd");
 
-echo '<script>alert("Database Connection Suucessful")</script>'; 
+//echo '<script>alert("Database Connection Suucessful")</script>'; 
 //global $name;
 //  $name=$_POST['policename'];
 // $address=$_POST['add'];

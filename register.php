@@ -283,8 +283,8 @@ font-weight:bold;
 
 <tr>
 
-<td class="h">Home</td>
-<td class="h">About Us</td>
+<td class="h"> <a href="">Home</a></td>
+<td class="h"> <a href="about.php">About Us</a></td>
 <td><input type="search" placeholder="search here"></td>
 <td><img src="https://cdn5.vectorstock.com/i/1000x1000/30/49/search-icon-seo-big-data-symbol-web-vector-27813049.jpg" width="50" height="30"></td>
 </tr>
@@ -316,7 +316,8 @@ Register
 
 <form method="post" action="">
 <div class="data">
-<span class="word">Enter Your Name:</span><input type="text" name="namer" placeholder="        Enter Name">
+<span class="word">Enter Your ID:</span><input type="text" name="namer" placeholder="        Enter Name">
+<span class="word">Enter Your Password:</span><input type="text" name="pass" placeholder="       password">
 
 <span class="word">Enter Your Email:</span><input type="text" name="email" placeholder="       Enter Email">
 <span class="word">Enter Your Mobile No:</span><input type="text" name="mobile" placeholder="       Enter Mobile no">
@@ -449,4 +450,7 @@ if(!filter_var($m1,FILTER_VALIDATE_INT) == false)
     
    }
 } 
+if(!isset($_COOKIE["login"]))// $_COOKIE is a variable and login is a cookie name 
+
+	header("location:login.php"); 
 ?>

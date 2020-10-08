@@ -8,52 +8,30 @@ body {
   background-size: cover;
   background-image:linear-gradient(to bottom,#33ccff,#ffd11a,#ff4dff,white);
 
-
-  height:200%;
 }
-.both
-{    position:absolute;
-  margin-left:8%;
-  display:grid;
-  grid-template-columns:50% 50%;
-  grid-gap:50%;
-  margin-right:8%;
-  margin-top:8%;
+
+
+.tablex
+{
  
-}
-.detailsform
-{
-    /* position:absolute; */
-  opacity: 0.8;
+
+background-image:linear-gradient(to right,#ff6600,white,green);
+margin-left:10%;
+margin-right:10%;
   border:2px  solid tomato;
-  background-image:linear-gradient(to right,#ff6600,white,green);
+  
 
-width:160%;
-padding-bottom:90%;
 }
-.detailsform1
+.table
 {
+  border:2px solid green;
+  background-color:#ff6600;
+width:100%;
 
-  opacity: 0.8;
-  /* position:absolute; */
-border:2px  solid tomato;
-  background-image:linear-gradient(to right,#ff6600,white,green);
-
-width:180%;
-}
-.table1
-{
-    position:relative;
-margin-bottom:40%;
-display:none;
+padding-bottom:1%;
+padding-top:1%;
 }
 
-.table2
-{
-    position:absolute;
-margin-top:25%;
-margin-left:14%;
-}
 .header
 {
   background-color:blue;
@@ -85,7 +63,7 @@ input
 background-color:white;
 /* border:2px solid gray; */
 box-sizing: border-box;
-padding-bottom:5%;
+
 }
 .data1
 {
@@ -95,10 +73,10 @@ padding-bottom:5%;
 }
 input[type=submit]
 {
- margin-left:15%;
+ margin-left:30%;
  background-color:#e60073;
 padding-top:2%;
-
+padding-bottom:2%;
  /* display:grid;
  grid-template-columns: 50% 50%; */
 }
@@ -114,20 +92,41 @@ grid-gap:4%;
 .table
 {
   border:2px solid green;
-  background-color:#ff6600;
-width:100%;
-
+  /* background-color:#ff6600; */
+width:80%;
+margin-left:10%;
+margin-right:30%;
 padding-bottom:1%;
 padding-top:1%;
+}
+.table2
+{
+    display:grid;
+  
+  grid-template-columns:50% 50%;
+}
+.table4
+{
+    margin-right:20%;
+    
+  
+}
+.table5
+{
+    margin-right:20%;
+   
+}
+.table3
+{
+  display:grid;
+  grid-template-columns:50% 50%;
 }
 /* .table td:hover  */
 .h:hover{ 
    background-color: white;
    border:2px solid green;
 }
-.table td { 
- width:20%;
-}
+
 .logo
 { 
     position:absolute;
@@ -198,22 +197,25 @@ border-radius:13px;
 }
 .footer
 { 
-  width:94%;
-  height:20%;
+  width:80%;
+  height:50%;
   background-color:gray;
-   background-image: url('https://st1.latestly.com/wp-content/uploads/2019/01/Republic-Day-2019-Image-380x214.jpg');
+  background-image: url('https://st1.latestly.com/wp-content/uploads/2019/01/Republic-Day-2019-Image-380x214.jpg');
   background-repeat: no-repeat;
   /* background-attachment: fixed; */
   background-size: cover;
-
-margin-top:64%;
+margin-top:30%;
 margin-left:8%;
 margin-right:13%;
 
 }
+.img1
+{ 
+margin:4%;
+}
  img
 { 
-  background-color:red;
+
 border-radius:13px;
 }
 .button
@@ -259,155 +261,56 @@ border-radius:13px;
 <div><img src="https://www.breakingboom.com/wp-content/uploads/2020/07/1544190413maharashtra-police-headquarters.jpg" width="250" height="120"></div>
 <div><img src="https://i.pinimg.com/originals/f0/a5/2f/f0a52ff5c4bd61871db8fce58c249368.jpg" width="250" height="120"></div>
 </div>
-<div class="both">
-<div class="detailsform1">
-<h1>Operations Here</h1>
-<hr>
-<form method="post">
-
-<input type=submit  value="If you want to See POlice Details Click Here " name="display">
-
-
-</form>
-<table border="2" class="table1">
-<tr>
-<th>name</th>
-<th>Address</th>
-<th>Contact</th>
-<th>DOB</th>
-<th>Female</th>
-<th>Duty_Area</th>
-<tr>
-</table>
-</div>
-<div class="detailsform">
-<h1>Details Form</h1>
-<hr>
-<form method="POST">
-<form method="post" action="">
-<div class="data">
-<span class="word">Enter ID of police :</span><input type="number" name="id" >
-<span class="word">Enter Name Of Police:</span><input type="text" name="namee" >
-
-<span class="word">Allocate Duty:</span><input type="text" name="duty" >
-<br> 
 <br>
-</div>
-<input type=submit value="Allocate Duty Area To Police" name="update">
+<br>
+<hr>
+<table class="tablex">
 
-
- <br>
- 
-
-</form>
-
-
-</div>
-</div>
-</div>
-
-
-<?php
-
-//$ch=$_POST['subject'];
-
-$user="root";
-$pass="";
-$db1="phpdatabase";
-//$db = mysqli_connect("localhost","root","","phpdatabase");
-$db=new mysqli("localhost",$user,$pass,$db1) or die("not conncetd");
-
-// echo '<script>alert("Database Connection Suucessful")</script>'; 
-//global $name;
-//  $name=$_POST['policename'];
-// $address=$_POST['add'];
-// $contactno=$_POST['contact'];
-// $dob1=$_POST['dob'];
-$value="";
-if(!empty($_POST['lang'])) {
-
-    foreach($_POST['lang'] as $value){
-        echo "value : ".$value.'<br/>';
-    }
-
-}
-$R="";
-if(!empty($_POST['radio']))
-{
-   $R= $_POST['radio'];
- echo $R;
-   
-} 
-?>
-<table border="2" class="table2">
 <tr>
-<th>ID</th>
-<th>Name</th>
-<th>Contact</th>
+<td>
+<div class="table2">
+<div>
+<img class="img1" src="https://img.collegepravesh.com/2018/11/KJSCE-Mumbai.jpg" width="80%" height="80%">
+</div>
+<div class="table4">
+<hr><h1>College Details</h1><hr>
 
-<th>Gender</th>
-<th>Duty_Area</th>
+
+<span class="details">
+College Name  :K.J.Somaiya.College.Of.Engineering
+<br> <br> 
+Address  :K.J.Somaiya.College.Of.Engineering <br> 
+Vidyanagar, Vidya Vihar East, Ghatkopar East,
+<br> Mumbai, Maharashtra 400077
+<br> <br> 
+Phone: 1234567890
+<hr>
+</span>
+</div>
+</td>
+</tr>
 <tr>
-
-<?php
-if(isset($_POST['display'])){
-
-
-    $result = "SELECT * FROM policedetails1";
-   $result1=mysqli_query($db,$result);
-   if ($result1->num_rows > 0) {
-    // output data of each row
-    while($row = $result1->fetch_assoc()) {
-
-   echo "<tr> <td>";
-        echo $row["ID"]; 
-       print "</td> <td>";
-        echo $row["name"]; 
-       print "</td> <td>";
-       
-        echo $row["Contact"]; 
-     print "</td> <td>";
-      
-        echo $row["Gender"];
-       print "</td><td>";
-        echo $row["Allocate_Duty"];
-      print "</td> </tr>";
-      //echo "id: " . $row["Name"]. " - Name: " . $row["Address"]. " " . $row["Contact"]. " " . $row["DOB"]." " . $row["Gender"]." " . $row["Duty_Area"];
-      echo "<br>";
-
-    }
-  } else {
-    echo "not displayed";
-  }
-
-} 
-?>
+<td>
+<div class="table3">
+<div><img class="img1" src="https://img.collegepravesh.com/2018/11/KJSCE-Mumbai.jpg" width="80%" height="80%">
+</div>
+<div class="table5">
+<h1>Developer Details</h1><hr>
+<span class="details">
+ Name  :Kiran Santosh Gaykar
+<br> <br> 
+Address  :At POst:Kishor <br> 
+Tal Murbad ,Dist Thane Pin Code 421 401
+<br> Mumbai, Maharashtra 400077
+<br> <br> 
+Phone: 1234567890
+<hr>
+</span></div>
+</div>
+</td>
+</tr>
 </table>
 
-<?php
-if(isset($_POST['update'])){
-$id=$_POST['id'];
- $duty=$_POST['duty'];
-
-
-
-
-
-
-
-$update="UPDATE policedetails1 SET Allocate_Duty='$duty' WHERE ID=$id ";
-if(!mysqli_query($db,$update))  
-{  
-    echo 'Not updated';  
-}  
-else  
-{  
-    echo 'Data updated';  
-} 
-
- }  
-
-?>
 
 
 <div class="footer">

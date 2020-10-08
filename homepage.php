@@ -284,8 +284,8 @@ font-weight:bold;
 
 <tr>
 
-<td class="h">Home</td>
-<td class="h">About Us</td>
+<td class="h"> <a href="">Home</a></td>
+<td class="h"> <a href="about.php">About Us</a></td>
 <td><input type="search" placeholder="search here"></td>
 <td><img src="https://cdn5.vectorstock.com/i/1000x1000/30/49/search-icon-seo-big-data-symbol-web-vector-27813049.jpg" width="50" height="30"></td>
 </tr>
@@ -323,15 +323,15 @@ Register
 
 </form>
 <div class="button">
-
-<form action="" method="get">
+<!-- 
+<form action="" method="POST">
 <input type="submit" value="Login" name="submit" class="s">
 </form>
 
-<form action="register.php" method="get">
+<form action="" method="POST">
 <input type="submit" value="Register" name="register" class="s1" >
 
-</form>
+</form> -->
 </div>
 </div>
 
@@ -343,9 +343,9 @@ Register
 <form method="POST">
 <form method="post" action="">
 <div class="data">
-<span class="word">Enter Your UserId:</span><input type="text" name="policename" placeholder="        Enter UserID">
+<span class="word">Enter Your UserId:</span><input type="text" name="ID" placeholder="        Enter UserID">
 
-<span class="word">Enter Your Password:</span><input type="text" name="add" placeholder="       Enter Password">
+<span class="word">Enter Your Password:</span><input type="text" name="PASS" placeholder="       Enter Password">
 
 
 <div class="button">
@@ -425,4 +425,108 @@ Register
 
 <?php
 
+
+$user="root";
+$pass="";
+$db1="phpdatabase";
+//$db = mysqli_connect("localhost","root","","phpdatabase");
+$db=new mysqli("localhost",$user,$pass,$db1) or die("not conncetd");
+
+// if(isset($_COOKIE["type"]))
+// {
+//  header("location:register.php");
+// }
+
+if(isset($_REQUEST["err"]))
+	$msg="Invalid username or Password";
+
+ if(isset($msg))
+{
+	
+echo $msg;
+}
+if(isset($_REQUEST['submit']))
+{
+$a = $_REQUEST['ID'];
+$b = $_REQUEST['PASS'];
+
+$res = mysqli_query($db,"select* from register where ID='$a'and PASSWORD='$b'");
+$result=mysqli_fetch_array($res);
+if($result)
+{
+	if(isset($_REQUEST["remember"]) && $_REQUEST["remember"]==1)
+	setcookie("login","1",time()+60);// second on page time 
+else
+	setcookie("login","1");
+	header("location:homepage.php");
+	
+	
+}
+else
+{
+	header("location:login.php?err=1");
+	
+}
+}
+
+// $message = '';
+
+// if(isset($_POST["register"]))
+// {
+//  if(empty($_POST["ID"]) || empty($_POST["PASS"]))
+//  {
+//   $message = "<div class='alert alert-danger'>Both Fields are required</div>";
+//  }
+//  else
+//  {
+//   $query = "
+//   SELECT * FROM register
+//   WHERE ID = :ID
+//   ";
+//   $statement = $connect->prepare($query);
+//   $statement->execute(
+//    array(
+//     'ID' => $_POST["ID"]
+//    )
+//   );
+//   $count = $statement->rowCount();
+//   if($count > 0)
+//   {
+//    $result = $statement->fetchAll();
+//    foreach($result as $row)
+//    {
+//     if(password_verify($_POST["PASS"], $row["PASSWORD"]))
+//     {
+//      setcookie("type", $row["user_type"], time()+3600);
+//      header("location:register.php");
+//     }
+//     else
+//     {
+//      $message = '<div class="alert alert-danger">Wrong Password</div>';
+//     }
+//    }
+//   }
+//   else
+//   {
+//    $message = "<div class='alert alert-danger'>Wrong Email Address</div>";
+//   }
+//  }
+// }
+  //  setcookie("nameUID", "John Watkin", time()+3600, "/","", 0);
+  //  setcookie("agePASS", "36", time()+3600, "/", "",  0);
+
+  //  echo $_COOKIE["name"]. "<br />";
+         
+  //  /* is equivalent to */
+  //  echo $HTTP_COOKIE_VARS["name"]. "<br />";
+   
+  //  echo $_COOKIE["age"] . "<br />";
+   
+  //  /* is equivalent to */
+  //  echo $HTTP_COOKIE_VARS["age"] . "<br />";
+  //  if( isset($_COOKIE["name"]))
+  //           echo "Welcome " . $_COOKIE["name"] . "<br />";
+         
+  //        else
+  //           echo "Sorry... Not recognized" . "<br />";
 ?>

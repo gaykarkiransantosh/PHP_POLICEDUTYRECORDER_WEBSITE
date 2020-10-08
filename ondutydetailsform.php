@@ -297,8 +297,8 @@ font-weight:bold;
 
 <tr>
 
-<td class="h">Home</td>
-<td class="h">About Us</td>
+<td class="h"> <a href="">Home</a></td>
+<td class="h"> <a href="about.php">About Us</a></td>
 <td><input type="search" placeholder="search here"></td>
 <td><img src="https://cdn5.vectorstock.com/i/1000x1000/30/49/search-icon-seo-big-data-symbol-web-vector-27813049.jpg" width="50" height="30"></td>
 </tr>
